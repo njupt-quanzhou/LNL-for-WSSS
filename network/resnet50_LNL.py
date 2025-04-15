@@ -21,8 +21,8 @@ class Net(nn.Module):
 
         torch.nn.init.xavier_uniform_(self.classifier.weight)
 
-        self.backbone = nn.ModuleList([self.stage0, self.stage1, self.stage2, self.stage3, self.stage4])
-        self.newly_added = nn.ModuleList([self.classifier, self.attention])
+        self.backbone = nn.ModuleList([self.stage0, self.stage1, self.stage2, self.stage3, self.stage4, self.attention])
+        self.newly_added = nn.ModuleList([self.classifier])
 
         self.queue_len = 500
         self.queue_dim = 2048
