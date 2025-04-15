@@ -82,7 +82,7 @@ def train():
         val_data_loader = DataLoader(val_dataset, batch_size=1, shuffle=False, num_workers=args.num_workers, pin_memory=True, drop_last=True)
 
     elif args.dataset == 'coco':
-        args.tf_freq = 5000
+        args.val_freq = 5000
         dataset_root = args.dataset_root
         model = getattr(importlib.import_module(args.network), 'Net')(num_cls=81)
         train_dataset = data_coco.COCOClsDataset('data/train_' + args.dataset + '.txt', coco_root=dataset_root,
